@@ -1,7 +1,7 @@
 import  { Component } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 import Loader from 'components/Loader/Loader';
-// import fetch from 'components/API/fetch';
+import { fetch } from 'components/API/fetch';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 
 export default class ImageFinder extends Component {
@@ -16,25 +16,26 @@ export default class ImageFinder extends Component {
 
     componentDidMount() {
         this.fetchImage();
-        // fetch();
     }
 
-    fetchImage() {
+    fetchImage = async () => {
         const {query, page} = this.state;
 this.setState ({
     loading: true,
 });
-const KEY = '29306254-f578092880d046ebab65c0a59';
-const BASE_URL = 'https://pixabay.com/api'
-const LIMIT = 12;
-
-axios.get(`${BASE_URL}/?q=${query}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=${LIMIT}`)
+const photos = await fetch(this.state.query, this.state.page);
+// const KEY = '29306254-f578092880d046ebab65c0a59';
+// const BASE_URL = 'https://pixabay.com/api'
+// const LIMIT = 12;
+console.log(photos)
+// axios.get(`${BASE_URL}/?q=${query}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=${LIMIT}`)
+fetch(query, page)
 .then(({data}) => {
     this.setState (({items}) => {
-console.log(data.hits)
-console.log(items)
+// console.log(fetch(query, page))
+// console.log(items)
 return {
-    items: [...items, ...data.hits]
+    items: [...items, ...photos.hits]
         }
     })
 })

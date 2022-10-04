@@ -15,5 +15,3 @@ return response.data
         console.log(error)
     }
 }
-
-// export default fetch;
