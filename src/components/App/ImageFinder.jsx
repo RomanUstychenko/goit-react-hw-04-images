@@ -55,32 +55,6 @@ finally {
             })
 }
 };
-
-//     fetchImage = async () => {
-//         const {query, page} = this.state;
-// this.setState ({
-//     loading: true,
-// });
-
-// await fetch(query, page)
-// .then((data) => {
-//     this.setState (({items}) => {
-// return {
-//     items: [...items, ...data.hits]
-//         }
-//     })
-// })
-// .catch(error => {
-//     this.setState({
-//         error
-//     })
-// })
-// .finally(() => 
-//     this.setState ({
-//         loading: false,
-//     })
-// )
-    // };
 LoadMore = () => {
     this.setState (({page}) => {
         return {

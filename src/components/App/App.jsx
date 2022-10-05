@@ -1,4 +1,5 @@
-import ImageFinder from "./ImageFinder";
+// import ImageFinder from "./ImageFinder";
+import Image from "./Image";
 
 export const App = () => {
   return (
@@ -12,7 +13,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      <ImageFinder />
+      {/* <ImageFinder /> */}
+      <Image />
     </div>
   );
 };

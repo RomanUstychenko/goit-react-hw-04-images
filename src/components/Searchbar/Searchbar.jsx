@@ -1,13 +1,21 @@
 import scss from "./Searchbar.module.scss"
 
+import React, { Component } from 'react'
 
-
-
-
-
-<header class="searchbar">
-  <form class="form">
-    <button type="submit" class="button">
+export default class Searchbar extends Component {
+  state = {
+    search: "",
+  }
+  render() {
+    const {search} = this.state
+    return (
+      <header className="searchbar">
+  <form 
+  class="form"
+  onSubmit="handleSubmit">
+    <button 
+    type="submit" 
+    className="button">
       <span class="button-label">Search</span>
     </button>
 
@@ -20,3 +28,12 @@ import scss from "./Searchbar.module.scss"
     />
   </form>
 </header>
+    )
+  }
+}
+
+
+
+
+
+
