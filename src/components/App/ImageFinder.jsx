@@ -14,7 +14,6 @@ export default class ImageFinder extends Component {
         error: null,
         page: 1,
         query: "",
-        key: "29306254-f578092880d046ebab65c0a59"
     };
 
     componentDidMount() {
@@ -29,13 +28,13 @@ export default class ImageFinder extends Component {
 
 
 async fetchImage()  {
-        const {query, page, key} = this.state;
+        const {query, page} = this.state;
 this.setState ({
     loading: true,
 })
 
 try {
-    const data = await getImage(key, page)
+    const data = await getImage( page)
         // fetch(query, page)
     // .then((data) => {
         this.setState (({items}) => {

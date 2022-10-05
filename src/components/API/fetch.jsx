@@ -8,10 +8,9 @@ const instance = axios.create({
         key: "29306254-f578092880d046ebab65c0a59"
     }
 })
-export const getImage = async (key="29306254-f578092880d046ebab65c0a59", page=1) => {
+export const getImage = async ( page=1) => {
     const {data} = await instance.get("/", {
         params: {
-            key,
             page,
         }
     });
