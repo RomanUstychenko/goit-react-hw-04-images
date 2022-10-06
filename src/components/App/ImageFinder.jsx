@@ -35,8 +35,6 @@ this.setState ({
 
 try {
     const data = await getImage( page)
-        // fetch(query, page)
-    // .then((data) => {
         this.setState (({items}) => {
     return {
         items: [...items, ...data.hits]

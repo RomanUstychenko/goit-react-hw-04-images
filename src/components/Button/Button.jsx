@@ -15,3 +15,14 @@ export const Button = ({ onClick }) => {
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
+
+export function SubmitBnt ({text, onClick}) {
+  return (
+    <button 
+    onClick={onClick}
+    type="submit" 
+    className={scss.button}>
+      <span className={scss.buttonLabel}>{text}</span>
+    </button>
+  ) 
+}

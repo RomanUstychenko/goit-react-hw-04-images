@@ -16,12 +16,11 @@ export const getImage = async ( page=1) => {
     });
     return data
 }
-export const searchImage = async (q, key, page=1) => {
+export const searchImage = async (q, page=1) => {
     const {data} = await instance.get("/", {
         params: {
             q,
             page,
-            key,
         }
     });
     return data

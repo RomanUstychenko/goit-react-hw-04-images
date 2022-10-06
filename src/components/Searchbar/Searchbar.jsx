@@ -1,30 +1,62 @@
 import scss from "./Searchbar.module.scss"
-
 import React, { Component } from 'react'
+import { nanoid } from "nanoid"
+import { SubmitBnt } from 'components/Button/Button'
 
 export default class Searchbar extends Component {
   state = {
-    search: "",
+    search: '',
   }
+  searchID = nanoid();
+
+searchField = {
+  label: "Search",
+  type: "text",
+  name: "search",
+  placeholder: "Search images and photos",
+  required: true,
+}
+  handleChange = (e) => {
+const {value, name } = e.target;
+this.setState ({
+  [name]: value
+})
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const {onSubmit} = this.props;
+    onSubmit({...this.state});
+    this.reset();
+  };
+  reset () {
+    this.setState ({
+      search: '',
+    })
+    };
+  
+ 
   render() {
-    const {search} = this.state
+    const {search} = this.state;
+    const {searchID, handleChange, handleSubmit} = this;
     return (
-      <header className="searchbar">
+      <header className={scss.searchbar}>
   <form 
-  class="form"
-  onSubmit="handleSubmit">
-    <button 
-    type="submit" 
-    className="button">
-      <span class="button-label">Search</span>
-    </button>
+  className={scss.form}
+  onSubmit={handleSubmit}>
+    <SubmitBnt 
+    text="Search"
+    onClick={handleSubmit} 
+    />
 
     <input
-      class="input"
-      type="text"
+      id={searchID}
+      className={scss.input}
+      value={search}
+      onChange={handleChange}
+      {...this.searchField}
       autocomplete="off"
       autofocus
-      placeholder="Search images and photos"
     />
   </form>
 </header>

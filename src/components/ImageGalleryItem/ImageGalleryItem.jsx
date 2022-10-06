@@ -1,7 +1,7 @@
 import scss from "./ImageGalleryItem.module.scss"
 
 
-const ImageGalleryItem = ({items}) => {
+const ImageGalleryItem = ({items, onClick}) => {
     console.log(items)
 
     return (
@@ -9,7 +9,9 @@ const ImageGalleryItem = ({items}) => {
             {items.map(item => (
               <li 
               className={scss.ImageGalleryItem}
-              key={item.id}>
+              key={item.id}
+              onClick={() => onClick(item.largeImageURL)}
+              >
                 <img
                 className={scss.ImageGalleryItemImage}
                   src={item.webformatURL}
