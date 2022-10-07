@@ -53,6 +53,7 @@ this.setState ({
 };
   onSearch = ({search}) => {
     this.setState ({
+      items: [],
       search,
     })
   }
@@ -85,12 +86,12 @@ openModal = (modalImage) => {
     const isImage = Boolean(items.length);
     return (
     <>
-      <div>
         {modalOpen && <Modal onClose={closeModal}>
           <img src={modalImage.largeImageURL} alt="" />
           </Modal>}
       <Searchbar 
       onSubmit={onSearch}/>
+      <div>
         {loading && <Loader />}
         {error && <p>Помилка</p>}
         {isImage && <ImageGallery 
@@ -98,10 +99,7 @@ openModal = (modalImage) => {
         onClick={openModal}
         />}
         {isImage && <Button onClick={this.LoadMore} />}
-
       </div>
-
-      
     </>
     )
   }

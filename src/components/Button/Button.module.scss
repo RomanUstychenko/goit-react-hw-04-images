@@ -47,14 +47,17 @@
 
 .SearchFormButtonLabel {
   // position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
+  // width: 1px;
+  // height: 1px;
+  padding: 5px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  // clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   // clip-path: inset(50%);
   border: 0;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
 }
 
 
