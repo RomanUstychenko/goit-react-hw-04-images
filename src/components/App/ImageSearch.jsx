@@ -7,7 +7,7 @@ import {Button} from "components/Button/Button"
 import Modal from 'components/Modal/Modal';
 
 
-export default class Image extends Component {
+export default class ImageSearch extends Component {
   state = {
     items: [],
     loading: false,

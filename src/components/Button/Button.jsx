@@ -21,8 +21,13 @@ export function SubmitBnt ({text, onClick}) {
     <button 
     onClick={onClick}
     type="submit" 
-    className={scss.button}>
-      <span className={scss.buttonLabel}>{text}</span>
+    className={scss.SearchFormButton}>
+      <span className={scss.SearchFormButtonLabel}>{text}</span>
     </button>
   ) 
 }
+
+SubmitBnt.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
+};

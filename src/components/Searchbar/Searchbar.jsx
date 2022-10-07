@@ -1,5 +1,6 @@
 import scss from "./Searchbar.module.scss"
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { nanoid } from "nanoid"
 import { SubmitBnt } from 'components/Button/Button'
 
@@ -40,9 +41,9 @@ this.setState ({
     const {search} = this.state;
     const {searchID, handleChange, handleSubmit} = this;
     return (
-      <header className={scss.searchbar}>
+      <header className={scss.Searchbar}>
   <form 
-  className={scss.form}
+  className={scss.SearchForm}
   onSubmit={handleSubmit}>
     <SubmitBnt 
     text="Search"
@@ -51,7 +52,7 @@ this.setState ({
 
     <input
       id={searchID}
-      className={scss.input}
+      className={scss.SearchFormInput}
       value={search}
       onChange={handleChange}
       {...this.searchField}
@@ -63,6 +64,10 @@ this.setState ({
     )
   }
 }
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 
 

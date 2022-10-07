@@ -1,9 +1,10 @@
-// import ImageFinder from "./ImageFinder";
-import Image from "./Image";
+import scss from "./App.module.scss"
+import ImageSearch from "./ImageSearch";
 
 export const App = () => {
   return (
     <div
+    className={scss.App}
       style={{
         height: '100vh',
         display: 'flex',
@@ -13,8 +14,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      {/* <ImageFinder /> */}
-      <Image />
+      <ImageSearch />
     </div>
   );
 };
