@@ -7,6 +7,7 @@ export const App = () => {
     className={scss.App}
       style={{
         height: '100vh',
+        // width: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

@@ -49,7 +49,6 @@ this.setState ({
     text="Search"
     onClick={handleSubmit} 
     />
-
     <input
       id={searchID}
       className={scss.SearchFormInput}
