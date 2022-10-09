@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom'
 import scss from "./Modal.module.scss"
 
@@ -30,8 +31,16 @@ export default class Modal extends Component {
     )
   }
 }
-
-
+Modal.propTypes = {
+  closeModal: PropTypes.arrayOf(
+    PropTypes.shape({
+      target: PropTypes.string.isRequired,
+      currentTarget: PropTypes.string.isRequired,
+      code: PropTypes.string.isRequired,
+      onClose: PropTypes.func.isRequired,
+    })
+    ),
+};
 
 
 

@@ -52,10 +52,18 @@ this.setState ({
 }
 };
   onSearch = ({search}) => {
-    this.setState ({
-      items: [],
-      search,
-    })
+
+    this.setState(prevState => {
+      if (prevState.search === search) {
+        return ;
+      } else {
+        return this.setState ({ 
+          items: [], 
+          search, 
+          page: 1, 
+        });
+      }
+    });
   }
   
   LoadMore = () => {
