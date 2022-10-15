@@ -6,17 +6,16 @@ import ImageGalleryItem from "components/ImageGalleryItem/ImageGalleryItem"
 export const ImageGallery = ({items, onClick}) => {
 return (
         <ul className={scss.ImageGallery}>
-            {items.map(({id, webformatURL, largeImageURL, tags}) => 
+            {items.map(({id, webformatURL, largeImageURL, tags}) => (
         <li
         className={scss.ImageGalleryItem}
         key={id} >
         <ImageGalleryItem
-            
             webformatURL={webformatURL}
             tags={tags}
             onClick={() => onClick({largeImageURL})}
              />
-        </li>)}
+        </li>))}
         </ul>
     )};
 
