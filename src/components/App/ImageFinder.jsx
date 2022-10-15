@@ -1,63 +1,63 @@
-import  { Component } from 'react'
-import  { useState } from 'react'
+// import  { Component } from 'react'
+// import  { useState } from 'react'
 
-import Loader from 'components/Loader/Loader';
-// import { fetch } from 'components/API/fetch';
-import { getImage } from 'components/API/fetch';
-import { ImageGallery } from 'components/ImageGallery/ImageGallery';
-import {Button} from "components/Button/Button"
+// import Loader from 'components/Loader/Loader';
+// // import { fetch } from 'components/API/fetch';
+// import { getImage } from 'components/API/fetch';
+// import { ImageGallery } from 'components/ImageGallery/ImageGallery';
+// import {Button} from "components/Button/Button"
  
-import React from 'react'
+// import React from 'react'
 
-export default function ImageFinder() {
+// export default function ImageFinder() {
 
-    const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [page, setPage] = useState(1);
-    const [query, setQuery] = useState("");
+//     const [items, setItems] = useState([]);
+//     const [loading, setLoading] = useState(false);
+//     const [error, setError] = useState(null);
+//     const [page, setPage] = useState(1);
+//     const [query, setQuery] = useState("");
 
    
-   const fetchImage = async () => {
-    setLoading(true)
+//    const fetchImage = async () => {
+//     setLoading(true)
 
-try {
-    const data = await getImage(page)
-    setItems((items) => {
-        return [...items, ...data.hits]
-            })
-    //     this.setState (({items}) => {
-    // return {
-    //     items: [...items, ...data.hits]
-    //         }
-    //     })
+// try {
+//     const data = await getImage(page)
+//     setItems((items) => {
+//         return [...items, ...data.hits]
+//             })
+//     //     this.setState (({items}) => {
+//     // return {
+//     //     items: [...items, ...data.hits]
+//     //         }
+//     //     })
  
-} catch (error) {
-    setError(error)
-    // this.setState({
-    //             error
-    //         })
-}
-finally {
-    setLoading(false)
-    // this.setState ({
-    //             loading: false,
-    //         })
-}
-};
-const LoadMore = () => {
-    setPage((prev) => prev +1)
-}
-    const isImage = Boolean(items.length);
-    return (
-        <div>
-          {loading && <Loader />}
-          {error && <p>Помилка</p>}
-          {isImage && <ImageGallery items={items}/>}
-          {isImage && <Button onClick={LoadMore} />}
-        </div>
-      )
-}
+// } catch (error) {
+//     setError(error)
+//     // this.setState({
+//     //             error
+//     //         })
+// }
+// finally {
+//     setLoading(false)
+//     // this.setState ({
+//     //             loading: false,
+//     //         })
+// }
+// };
+// const LoadMore = () => {
+//     setPage((prev) => prev +1)
+// }
+//     const isImage = Boolean(items.length);
+//     return (
+//         <div>
+//           {loading && <Loader />}
+//           {error && <p>Помилка</p>}
+//           {isImage && <ImageGallery items={items}/>}
+//           {isImage && <Button onClick={LoadMore} />}
+//         </div>
+//       )
+// }
 
 
 // export default class ImageFinder extends Component {
