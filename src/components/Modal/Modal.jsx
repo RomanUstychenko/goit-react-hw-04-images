@@ -17,11 +17,6 @@ export default function Modal({onClose, children}) {
     return () => { window.removeEventListener("keydown", closeModalKey)}
     }, [onClose]);
 
-    // useEffect(() => {
-    //   return () => {
-       
-    //   }
-    // }, [onClose])
 
   const closeModal  = ({ target, currentTarget }) => {
     if (target === currentTarget) {
