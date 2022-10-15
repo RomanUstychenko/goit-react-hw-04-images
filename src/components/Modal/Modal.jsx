@@ -8,17 +8,23 @@ export const modalRoot = document.getElementById("modal-root")
 export default function Modal({onClose, children}) {
 
   useEffect(() => {
-    window.addEventListener("keydown", closeModal)
-    
-    }, [onClose])
-    useEffect(() => {
-      return () => {
-        window.removeEventListener("keydown", closeModal)
+    const closeModalKey  = ({ code }) => {
+      if ( code === "Escape") {
+        onClose();
       }
-    }, [onClose])
+    }
+    window.addEventListener("keydown", closeModalKey)
+    return () => { window.removeEventListener("keydown", closeModalKey)}
+    }, [onClose]);
 
-  const closeModal  = ({target, currentTarget, code}) => {
-    if (target === currentTarget || code === "Escape") {
+    // useEffect(() => {
+    //   return () => {
+       
+    //   }
+    // }, [onClose])
+
+  const closeModal  = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
       onClose();
     }
   }
