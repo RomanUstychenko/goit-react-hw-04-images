@@ -44,14 +44,15 @@ export default function ImageSearch() {
 
  const onSearch = (inputSearch) => {
 
-  {if (inputSearch !== search) {
+  if (inputSearch !== search) {
+    // if (!inputSearch) {
      setItems([]);
     setSearch(inputSearch);
     setPage(1);
       } else {
          setSearch(inputSearch)
       }
-    }
+    
   }
   
   const LoadMore = () => {
